@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "mercado-list"
+    }
+  },
+  "defaultProject": "mercado-list",
+  "cli": {
+    "analytics": "d4154bb4-c8ef-48b4-8ade-6c3ec2880940"
+  }
 }

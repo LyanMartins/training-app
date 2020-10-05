@@ -1,0 +1,13 @@
+input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.item-center{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.t-20{
+    top: 20% !important;
+}

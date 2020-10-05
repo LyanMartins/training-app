@@ -1,0 +1,8 @@
+    
+<div class="uk-margin-large-top">
+    <div class="uk-grid-small" *ngIf="item" uk-grid>
+        <input class="uk-checkbox uk-margin-left m-5p" [attr.checked]="item.checked ? 'checked' : null"   type="checkbox">
+        <p class="uk-width-expand" uk-leader>{{ item.name }}</p>
+        <div>{{ item.price | currency:'BRL' }}</div>
+    </div>
+</div>
