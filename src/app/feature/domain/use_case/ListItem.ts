@@ -11,7 +11,6 @@ export class ListItem implements ListItemInterface{
 
     constructor(itemRepository: ItemRepository){
         this.itemRepository = itemRepository;
-        console.log("Item");
     }
 
     execute(): Item{

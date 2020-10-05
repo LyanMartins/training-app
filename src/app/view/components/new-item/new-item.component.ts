@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ItemService } from 'src/app/feature/data/data_source/ItemService';
 import { Item } from 'src/app/feature/domain/entity/Item';
@@ -14,20 +15,17 @@ import { ListItem } from 'src/app/feature/domain/use_case/ListItem';
 })
 export class NewItemComponent implements OnInit {
 
-  private createItem: CreateItem;
-  private listItem: ListItem;
-  
+
 
   public form: FormGroup;
   @Output() responseEmitter = new EventEmitter();
 
   constructor(
-    createItem: CreateItem,
-    listItem: ListItem,
-    private fb: FormBuilder
+    private createItem: CreateItem,
+    private listItem: ListItem,
+    private fb: FormBuilder,
+    private router: Router
     ) {
-    this.createItem = createItem;
-    this.listItem = listItem;
     this.form = this.fb.group({
       name: ['',Validators.required],
       quantity: [''],
@@ -47,8 +45,10 @@ export class NewItemComponent implements OnInit {
       parseFloat(form.price)
     );
     let data = this.createItem.execute(item);
-    if(data)
+    if(data){
       this.responseEmitter.emit(this.getList());
+      this.router.navigate(['/']);
+    }
   }
   
   getList(){
