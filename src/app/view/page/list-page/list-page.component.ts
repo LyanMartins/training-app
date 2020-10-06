@@ -13,8 +13,8 @@ export class ListPageComponent implements OnInit {
   @Input() item: Item;
 
   public config: any= {
-    'title':'Items',
-    'type':'item_page'
+    'title':'Listas',
+    'type':'list_page'
   }
 
   constructor() {

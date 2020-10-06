@@ -16,6 +16,8 @@ import { NewItemComponent } from './view/components/new-item/new-item.component'
 import { TotalItemComponent } from './view/components/total-item/total-item.component';
 import { ListItemComponent } from './view/components/list-item/list-item.component';
 import { NewItemPageComponent } from './view/page/new-item-page/new-item-page.component';
+import { ListItemPageComponent } from './view/page/list-item-page/list-item-page.component';
+import { NewListPageComponent } from './view/page/new-list-page/new-list-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { NewItemPageComponent } from './view/page/new-item-page/new-item-page.co
     TotalItemComponent,
     ListPageComponent,
     NewItemPageComponent,
+    ListItemPageComponent,
+    NewListPageComponent,
   ],
   imports: [
     ReactiveFormsModule,
