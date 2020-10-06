@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NewListPageComponent implements OnInit {
 
   public config: any= {
-    'title':'Adicionar nova Lista',
+    'title':'Adicionar Lista',
     'type':'new_list_page'
   }
 
