@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Item } from 'src/app/feature/domain/entity/Item';
+import { ListItem } from 'src/app/feature/domain/use_case/ListItem';
 
 @Component({
   selector: 'app-list-item-page',
@@ -8,17 +9,25 @@ import { Item } from 'src/app/feature/domain/entity/Item';
 })
 export class ListItemPageComponent implements OnInit {
 
-  @Input() item: Item;
-
   public config: any= {
     'title':'Lista de Items',
     'type':'item_page'
   }
+  private listItem: ListItem;
+  
+  @Input() name;
+  @Input() item: Item;
 
-  constructor() {
+  constructor(listItem: ListItem) {
+    this.listItem = listItem;
+  }
+
+  ngOnInit(): void {
+    this.item = this.getList();
   }
   
-  ngOnInit(): void {
+  getList(){
+    return this.listItem.execute();
   }
 
   reciverFeedback($event){

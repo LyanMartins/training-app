@@ -12,9 +12,6 @@ import { ListItem } from './feature/domain/use_case/ListItem';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListPageComponent } from './view/page/list-page/list-page.component';
 import { NavbarComponent } from './view/components/navbar/navbar.component';
-import { NewItemComponent } from './view/components/new-item/new-item.component';
-import { TotalItemComponent } from './view/components/total-item/total-item.component';
-import { ListItemComponent } from './view/components/list-item/list-item.component';
 import { NewItemPageComponent } from './view/page/new-item-page/new-item-page.component';
 import { ListItemPageComponent } from './view/page/list-item-page/list-item-page.component';
 import { NewListPageComponent } from './view/page/new-list-page/new-list-page.component';
@@ -23,9 +20,6 @@ import { NewListPageComponent } from './view/page/new-list-page/new-list-page.co
   declarations: [
     AppComponent,
     NavbarComponent,
-    NewItemComponent,
-    ListItemComponent,
-    TotalItemComponent,
     ListPageComponent,
     NewItemPageComponent,
     ListItemPageComponent,

@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Item } from 'src/app/feature/domain/entity/Item';
 import { ListItem } from 'src/app/feature/domain/use_case/ListItem';
-import { ListItemComponent } from '../../components/list-item/list-item.component';
 
 @Component({
   selector: 'app-list-page',
