@@ -1,28 +1,28 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Api } from 'src/app/common/service/api';
 import { ItemModel } from '../model/ItemModel';
 import { ItemServiceInterface } from './ItemServiceInterface';
 
 @Injectable()
-export class ItemService implements ItemServiceInterface {
+export class ItemService extends Api implements ItemServiceInterface {
 
-    constructor(){
+    constructor(private httpClient: HttpClient){
+        super();
         console.log("dentro do service");
     }
-    listItem(): ItemModel {
-        let data = localStorage.getItem("item");
-        let newItem :ItemModel = JSON.parse(data);
-        newItem = new ItemModel(newItem.name, newItem.quantity,newItem.checked,newItem.price)
-        return newItem;
+    listItem(): Observable<ItemModel[]> {
+        var litem: ItemModel[];
+        let item = this.httpClient.get<ItemModel[]>(this.url+'list')
+        console.log("aq");
+        console.log(item);
+        return item;
     }
 
     createItem(item: ItemModel): ItemModel {
-        let old = localStorage.getItem("item");
-        localStorage.setItem("item",JSON.stringify(item))
-        let data = localStorage.getItem("item");
-        let newItem :ItemModel = JSON.parse(data);
-        newItem = new ItemModel(newItem.name, newItem.quantity,newItem.checked,newItem.price)
-        return newItem;
+
     }
 
 }

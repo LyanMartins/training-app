@@ -16,7 +16,8 @@ export class ItemRepository implements ItemRepositoryInterface{
     }
     listItem(): Item {
         let list = this.itemService.listItem();
-        return list.toEntity()
+        console.log(list);
+        return list;
     }
 
     createItem(item: Item): Item {

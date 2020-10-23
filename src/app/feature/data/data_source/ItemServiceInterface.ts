@@ -5,6 +5,6 @@ export interface ItemServiceInterface {
 
     createItem(item: ItemModel): ItemModel;
 
-    listItem(): ItemModel;
+    listItem(): Observable<ItemModel[]> ;
 
 }
