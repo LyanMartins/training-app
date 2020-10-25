@@ -1,0 +1,22 @@
+name: deploy_to_firebase_hosting
+
+on:
+  push:
+    tags:
+      - release-production-*
+
+jobs:
+  deploy_to_firebase_hosting:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@master
+      
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ 1//0hwy2HJWKx71MCgYIARAAGBESNwF-L9Ir6322mGN-YRzBnB1lMbPeO_XSTE4D2Rvsq-_QFtChKMR9tE-sjTb_0mEzT7nMVYOV6W0 }}
