@@ -11,9 +11,12 @@ export class NavbarComponent implements OnInit {
     'title':'Page',
     'type':'type_page'
   }
+
+  @Input() param: number;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.config)
   }
 
 }
