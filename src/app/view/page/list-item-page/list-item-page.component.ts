@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Item } from 'src/app/feature/domain/entity/Item';
-import { ListItem } from 'src/app/feature/domain/use_case/ListItem';
+import { Observable } from 'rxjs';
+import { Item } from 'src/app/feature/item/domain/entity/Item';
+import { ListItem } from 'src/app/feature/item/domain/use_case/ListItem';
 
 @Component({
   selector: 'app-list-item-page',

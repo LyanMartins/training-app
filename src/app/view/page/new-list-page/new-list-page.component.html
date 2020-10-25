@@ -1,15 +1,15 @@
 <app-navbar [config]="config" ></app-navbar>
 <div class="uk-container uk-margin-left uk-margin-right">
-    <form [formGroup]=""   class="uk-grid">
+    <form [formGroup]="form"   class="uk-grid">
         <div class="uk-width-1-1">
             <!-- [ngClass]="{'uk-form-danger': (!form.controls.name.valid && !form.controls.name.pristine)}"r -->
             <!-- formControlName="name" -->
-            <input class="uk-input"   type="text" placeholder="Titulo"
+            <input class="uk-input"   type="text" placeholder="Titulo" formControlName="title"
             >
         </div>
         <div class="uk-width-1-1  uk-margin-top">
             <!-- [disabled]="form.invalid" (click)="createNewItem()" -->
-            <button class="uk-button uk-button-primary uk-width-1-1"  >Salvar</button>
+            <button class="uk-button uk-button-primary uk-width-1-1"  [disabled]="form.invalid" (click)="createNewList()" >Salvar</button>
         </div>  
 
     </form>

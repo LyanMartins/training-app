@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ItemRepository } from '../../data/repository/ItemRepository';
 import { Item } from '../entity/Item';
-import { ItemRepositoryInterface } from '../repository/ItemRepositoryInterface';
 import { CreateItemInterface } from './CreateItemInterface';
+
 
 @Injectable()
 export class CreateItem implements CreateItemInterface{

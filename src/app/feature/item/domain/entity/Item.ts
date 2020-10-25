@@ -26,5 +26,13 @@ export class Item {
             this.price
         );
     }
+    public fromModel(model): Item {
+        return new Item(
+            model.nome,
+            model.quantity,
+            model.checked,
+            model.price
+        )
+    }
 
 }

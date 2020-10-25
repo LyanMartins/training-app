@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NewItemComponent } from './view/components/new-item/new-item.component';
 import { ListItemPageComponent } from './view/page/list-item-page/list-item-page.component';
 import { ListPageComponent } from './view/page/list-page/list-page.component';
 import { NewItemPageComponent } from './view/page/new-item-page/new-item-page.component';

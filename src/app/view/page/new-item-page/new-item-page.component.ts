@@ -1,9 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Item } from 'src/app/feature/domain/entity/Item';
-import { CreateItem } from 'src/app/feature/domain/use_case/CreateItem';
-import { ListItem } from 'src/app/feature/domain/use_case/ListItem';
+import { Item } from 'src/app/feature/item/domain/entity/Item';
+import { CreateItem } from 'src/app/feature/item/domain/use_case/CreateItem';
+import { ListItem } from 'src/app/feature/item/domain/use_case/ListItem';
+
 
 @Component({
   selector: 'app-new-item-page',

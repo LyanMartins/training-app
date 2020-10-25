@@ -7,7 +7,7 @@ export abstract class Api{
     public url:string = 'https://mercado-list.herokuapp.com/';
 
     public httpOptions:any = {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        headers: new HttpHeaders({ 'responseType':'json', 'Content-Type': 'application/json' })
     }
     
 }
