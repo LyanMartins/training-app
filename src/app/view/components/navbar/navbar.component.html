@@ -1,0 +1,19 @@
+<nav class="uk-navbar uk-navbar-container uk-margin">
+    <div class="uk-navbar-left">
+        <a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle *ngIf="this.config.type == 'list_page'" href="#offcanvas-slide"></a>
+        <a class="uk-navbar-toggle" href="/list/{{param}}" *ngIf="this.config.type == 'new_page'" uk-icon="icon: arrow-left"></a>
+        <a class="uk-navbar-toggle" href="/" *ngIf="this.config.type == 'item_page'" uk-icon="icon: arrow-left"></a>
+        <a class="uk-navbar-toggle" href="/" *ngIf="this.config.type == 'new_list_page'" uk-icon="icon: arrow-left"></a>
+    </div>
+    <a class="uk-navbar-item uk-logo" href="/">{{ this.config.title }}</a>
+</nav>
+<div id="offcanvas-slide" uk-offcanvas>
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-default">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <h3>Menu</h3>
+            <li ><a href="/create"><span uk-icon="plus"></span> Adicionar</a></li>
+            <li ><a href="/list"><span uk-icon="plus"></span> Itens</a></li>
+        </ul>
+    </div>
+</div>
