@@ -13,10 +13,12 @@ export default defineConfig({
   },
   css: {
     preprocessorOptions: {
-      sass: {
+      scss: {
         additionalData: `
           @import "./src/styles/colors.scss";
-          @import "@/src/styles/globals.scss";
+          @import "./src/styles/global.scss";
+          @import "./src/styles/grid.scss";
+          @import "./src/styles/utilities.scss";
         `
       }
     }
