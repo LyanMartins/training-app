@@ -6,9 +6,9 @@
     </div>
     <input 
       class="input input-row mt-1" 
-      :class="{hasError: hasEmailInvalid}" type="e-mail" v-model="login.email" id="" required placeholder="Email">
+      :class="{hasError: hasError}" type="e-mail" v-model="login.email" id="" required placeholder="Email">
     <input class="input input-row mt-1" type="password" v-model="login.password" name="password" required placeholder="Senha">
-    <div class="warning-alert mt-2" v-if="hasEmailInvalid">
+    <div class="warning-alert mt-2" v-if="hasError">
       <span class="icon"></span>
       <span class="close">x</span>
       <label for="">{{errorMsg}}</label>

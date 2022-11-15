@@ -1,5 +1,6 @@
+import { useAuthStore } from "@/stores/auth.store";
 import { defineComponent } from "vue";
-import axios from 'axios';
+
 
 export default defineComponent({
   components: {},
@@ -10,7 +11,7 @@ export default defineComponent({
         email:'',
         password:''
       },
-      hasEmailInvalid: false,
+      hasError: false,
       errorMsg: '',
       data: []
     }
@@ -19,20 +20,26 @@ export default defineComponent({
   methods:{
     onSubmit() {
       this.validateEmail(this.login.email)
-      axios
-        .post('http://localhost:3000/login', this.login)
-        .then(response => (this.data = response.data))
-      this.$router.push('Home') 
+
+      if(this.hasError) return;
+      
+      const authStore = useAuthStore();
+      authStore.login(this.login);
+     
     },
     validateEmail(value: any) {
       if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value))
       {
-          this.errorMsg = 'Email inválido!';
-          return this.hasEmailInvalid = true;
+        return this.feedbackError(true, 'Email inválido!');
       }
-      this.errorMsg = '';
-      return this.hasEmailInvalid = false;
+      return this.feedbackError(false)
+    
     },  
+
+    feedbackError(hasError:boolean, errorMsg:string = '') {
+      this.errorMsg = errorMsg;
+      return this.hasError = hasError;
+    }
     
   },
 
@@ -40,7 +47,7 @@ export default defineComponent({
     'login.email'(value){
       // binding this to the data value in the email input
       this.login.email = value;
-      if(this.hasEmailInvalid){
+      if(this.hasError && (this.errorMsg === '' || this.errorMsg === 'Email inválido!') ){
         this.validateEmail(value);
       }
       
@@ -48,6 +55,9 @@ export default defineComponent({
   },
 
   mounted() {
+    if ( useAuthStore().user) {
+      this.$router.push('home') 
+    }
   },
  
 });
