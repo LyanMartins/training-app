@@ -1,4 +1,5 @@
 import { defineComponent } from "vue";
+import axios from 'axios';
 
 export default defineComponent({
   components: {},
@@ -9,29 +10,40 @@ export default defineComponent({
         email:'',
         password:''
       },
-      hasEmailInvalid:false
+      hasEmailInvalid: false,
+      errorMsg: '',
+      data: []
     }
   },
 
   methods:{
     onSubmit() {
-
-        console.log(this.hasEmailInvalid)
+      this.validateEmail(this.login.email)
+      axios
+        .post('http://localhost:3000/login', this.login)
+        .then(response => (this.data = response.data))
+      this.$router.push('Home') 
     },
-    validateEmail(value: any){
+    validateEmail(value: any) {
       if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value))
       {
-          this.hasEmailInvalid = true;
+          this.errorMsg = 'Email inválido!';
+          return this.hasEmailInvalid = true;
       }
-      this.hasEmailInvalid = true;
+      this.errorMsg = '';
+      return this.hasEmailInvalid = false;
     },  
+    
   },
 
   watch: {
-    'email.login'(value){
+    'login.email'(value){
       // binding this to the data value in the email input
       this.login.email = value;
-      this.validateEmail(value);
+      if(this.hasEmailInvalid){
+        this.validateEmail(value);
+      }
+      
     },
   },
 
