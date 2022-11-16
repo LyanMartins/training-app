@@ -1,4 +1,4 @@
-import { useAuthStore } from "@/stores/auth.store";
+import { useAuthStore } from "@/stores/authStore";
 import { defineComponent } from "vue";
 
 export default defineComponent({

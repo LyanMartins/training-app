@@ -1,12 +1,13 @@
 <template>
+  <NavBar />
   <h1>Home</h1>
 </template>
 
 <script lang="ts">
-//   import LoginComponent from './LoginComponent';
-//   export default LoginComponent;
+  import HomeComponent from './HomeComponent';
+  export default HomeComponent;
 </script>
 
 <style lang="scss">
-//   @import "./Login.scss";
+  @import "./Home.scss";
 </style>
