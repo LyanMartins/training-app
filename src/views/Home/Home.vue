@@ -1,13 +1,12 @@
 <template>
-    <h1>Home</h1>
+  <h1>Home</h1>
 </template>
-  
-  <script lang="ts">
+
+<script lang="ts">
 //   import LoginComponent from './LoginComponent';
 //   export default LoginComponent;
-  </script>
-  
-  <style lang="scss" >
+</script>
+
+<style lang="scss">
 //   @import "./Login.scss";
-  </style>
-  
+</style>
