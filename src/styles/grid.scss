@@ -1,3 +1,14 @@
 .wrapper {
     display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+    &.third-column-center{
+        grid-template-columns: 0.5fr 2fr 0.5fr;
+        align-content: center;
+        text-align: center;
+    }
+   
 }
+
+

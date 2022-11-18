@@ -1,8 +1,23 @@
 .top-navbar {
     background-color: lightgray;
-    height: 100px;
+    height: 130px;
     top: 0;
     left: 0;
-    padding: 2em;
-    margin: -2em -2em 0 -2em;
+    padding: 2.2em;
+    margin: -2.2em -2.2em 0 -2.2em;
+    border-radius: 0 0 30px 30px;
+    
+    .menu{
+        height: 30px;
+        cursor: pointer;
+    }
+    .logout{
+        justify-self: self-end;
+        height: 26px;
+        cursor: pointer;
+    }
+    &.logout:focus {
+        width: 70px;
+        height: 74px;
+    }
 }
