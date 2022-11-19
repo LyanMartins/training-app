@@ -16,16 +16,22 @@ export default defineComponent({
     };
   },
 
+  setup() {
+    // initialize the store
+    const authStore = useAuthStore()
+    return {authStore}
+  },
+
   methods: {
     async onSubmit() {
       this.validateEmail(this.login.email);
 
       if (this.hasError) return;
 
-      const authStore = useAuthStore();
-      await authStore.login(this.login);
+      //const authStore = useAuthStore();
+      await this.authStore.login(this.login);
 
-      if (Object.keys(authStore.error).length === 0) {
+      if (Object.keys(this.authStore.error).length === 0) {
         return this.$router.push("home");
       }
 

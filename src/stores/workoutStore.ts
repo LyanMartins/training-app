@@ -1,17 +1,17 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-export const useAuthStore = defineStore("auth", {
+export const useWorkoutStore = defineStore("workout", {
   state: () => {
     return {
-      user: localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")??''): '',
+      workout: [],
       error: {},
     };
   },
   actions: {
-    async login(loginForm: any) {
+    async getWorkout(userId: string) {
       return await axios
-        .post("http://localhost:3000/login", loginForm)
+        .post("http://localhost:3000/login", userId)
         .then((response) => {
           localStorage.setItem("user", JSON.stringify(response.data));
         })

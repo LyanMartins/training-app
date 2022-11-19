@@ -1,6 +1,10 @@
 <template>
   <NavBar />
-  <h1>Home</h1>
+  <div class="container">
+    <h1>Olá {{user.name}}</h1>
+    <Card />
+  </div>
+  
 </template>
 
 <script lang="ts">

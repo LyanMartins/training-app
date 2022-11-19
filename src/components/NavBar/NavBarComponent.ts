@@ -10,9 +10,15 @@ export default defineComponent({
   },
 
   methods: {
+    logout(){
+      const authStore = useAuthStore();
+      authStore.logout();
+    }
   },
 
   mounted() {
-    
+    if (!useAuthStore().user) {
+      this.$router.push("");
+    }
   },
 });

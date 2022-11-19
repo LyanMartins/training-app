@@ -1,8 +1,12 @@
 <template>
   <nav class="top-navbar wrapper third-column-center">
-    <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M7 34.55V33h34v1.55Zm0-9.8v-1.5h34v1.5ZM7 15v-1.55h34V15Z"/></svg>
-    .
-    <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M11.15 42Q10 42 9.2 41.2t-.8-1.95v-28.5q0-1.15.8-1.95t1.95-.8h13.1v1.55h-13.1q-.45 0-.85.375-.4.375-.4.825v28.5q0 .45.4.825.4.375.85.375h13.1V42Zm22-10.5L32 30.4l4.65-4.65h-17.8v-1.5H36.6l-4.65-4.65 1.15-1.1 6.5 6.55Z"/></svg>
+    <i>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M3.5 17.275v-1h17v1Zm0-4.775v-1h17v1Zm0-4.775v-1h17v1Z"/></svg>
+    </i>
+    <span></span>
+    <i v-on:click="logout()">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M5.8 21q-.675 0-1.138-.462-.462-.463-.462-1.163V5.625q0-.7.462-1.162Q5.125 4 5.8 4h6.425v1H5.8q-.225 0-.412.188-.188.187-.188.437v13.75q0 .25.188.437.187.188.412.188h6.425v1Zm10.475-4.95-.7-.725 2.3-2.325h-8.65v-1h8.65l-2.3-2.325.7-.725L19.8 12.5Z"/></svg>
+    </i>
   </nav>
 </template>
 
