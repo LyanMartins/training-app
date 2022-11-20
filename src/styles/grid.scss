@@ -8,6 +8,10 @@
         align-content: center;
         text-align: center;
     }
+
+    &.two-column{
+        grid-template-columns: 2fr 2fr;
+    }
    
 }
 

@@ -3,6 +3,8 @@
   <div class="container">
     <h1>Olá {{user.name}}</h1>
     <Card />
+    <Card />
+    <Card />
   </div>
   
 </template>
