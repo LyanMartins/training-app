@@ -17,22 +17,31 @@ export default defineComponent({
     Navigation,
   },
 
-  setup() {    
+  setup() {
+    // initialize the store
+    const authStore = useAuthStore()
+    return {authStore}
   },
 
   data() {
     return {
-      user: useAuthStore().user,
+      user: useAuthStore().getUser,
       workouts: []
       
     };
+  },
+
+  watch: {
+    user() {
+      useWorkoutStore().getWorkout(useAuthStore().user.id);
+      
+    }
   },
 
   methods: {
   },
 
   async mounted() {
-    console.log(useAuthStore().user.id)
     await useWorkoutStore().getWorkout(useAuthStore().user.id);
     this.workouts = useWorkoutStore().workout
   },
