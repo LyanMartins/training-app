@@ -15,13 +15,15 @@ const router = createRouter({
     },
     {
       path: "/home",
-      name: "",
+      name: "Home",
       component: Home,
     },
     {
       path: "/exercises",
-      name: "",
+      name: "Exercises",
       component: Exercises,
+      props: true,
+
     },
   ],
 });

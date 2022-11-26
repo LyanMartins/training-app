@@ -4,7 +4,7 @@
       <span>Intervalo: {{ breaktime }}</span>
       
       <div class="footer wrapper two-column">
-        <button class="btn" v-on:click="exercises('u')">Exercicios</button>
+        <button class="btn" v-on:click="exercises()">Exercicios</button>
         <button class="btn">Finalizar</button>
       </div>
   </div>

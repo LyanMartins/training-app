@@ -32,17 +32,16 @@ export default defineComponent({
   },
 
   watch: {
-    user() {
-      useWorkoutStore().getWorkout(useAuthStore().user.id);
-      
-    }
+    // user() {
+    //   useWorkoutStore().listWorkout(useAuthStore().user.id);
+    // }
   },
 
   methods: {
   },
 
   async mounted() {
-    await useWorkoutStore().getWorkout(useAuthStore().user.id);
+    await useWorkoutStore().listWorkout(useAuthStore().user.id);
     this.workouts = useWorkoutStore().workout
   },
 });

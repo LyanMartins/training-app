@@ -1,4 +1,6 @@
 import { useAuthStore } from "@/stores/authStore";
+import { useExercisesStore } from "@/stores/exercisesStore";
+import { useWorkoutStore } from "@/stores/workoutStore";
 import { defineComponent } from "vue";
 
 export default defineComponent({
@@ -6,7 +8,8 @@ export default defineComponent({
 
   props: {
     title: String,
-    breaktime: Number
+    breaktime: Number,
+    workoutId: String
   },
 
   data() {
@@ -19,8 +22,10 @@ export default defineComponent({
       authStore.logout();
     },
 
-    exercises(workoutId: String){
-        this.$router.push("exercises");
+    exercises(){
+      console.log(this.workoutId)
+      useWorkoutStore().$state.workoutId = this.workoutId??'';
+      this.$router.push({ name:"Exercises"});
     }
   },
 

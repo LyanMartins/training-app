@@ -6,7 +6,7 @@
       <Skeleton height="200px" width="100%"/>
     </div>
     <div v-for="workout in workouts">
-      <Card :title="workout.title" :breaktime="workout.breakTime" />
+      <Card :title="workout.title" :breaktime="workout.breakTime" :workoutId="workout.id" />
     </div>
   </div>
   

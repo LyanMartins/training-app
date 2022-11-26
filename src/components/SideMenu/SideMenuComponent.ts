@@ -1,11 +1,8 @@
 import { useAuthStore } from "@/stores/authStore";
 import { defineComponent } from "vue";
-import SideMenu from "@/components/SideMenu/SideMenu.vue";
 
 export default defineComponent({
-  components: {
-    SideMenu
-  },
+  components: {},
 
   props:{
     second: Boolean
@@ -13,17 +10,15 @@ export default defineComponent({
 
   data() {
     return {
-      hiddenSideMenu: true
+      hiddenSideMenu: false
     };
   },
 
   methods: {
 
-    openSideMenu()
-    {
-      this.hiddenSideMenu = false;
+    closeSideMenu(){
+      this.hiddenSideMenu = true;
     },
-
 
     logout(){
       const authStore = useAuthStore();
