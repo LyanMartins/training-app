@@ -1,5 +1,5 @@
 import { useAuthStore } from "@/stores/authStore";
-import { defineComponent } from "vue";
+import { defineComponent, toHandlers } from "vue";
 import SideMenu from "@/components/SideMenu/SideMenu.vue";
 
 export default defineComponent({
@@ -18,18 +18,23 @@ export default defineComponent({
   },
 
   methods: {
-
-    openSideMenu()
-    {
-      this.hiddenSideMenu = false;
+    openSideMenu(){
+      this.hiddenSideMenu = !this.hiddenSideMenu;
     },
-
 
     logout(){
       const authStore = useAuthStore();
       authStore.logout();
     }
   },
+
+  
+  watch:{
+    // hiddenSideMenu(){
+    //   console.log("watch")
+    //   this.hiddenSideMenu = !this.hiddenSideMenu
+    // }
+  }, 
 
   mounted() {
     if (!useAuthStore().user) {

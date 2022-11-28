@@ -5,12 +5,12 @@ export default defineComponent({
   components: {},
 
   props:{
-    second: Boolean
+    hiddenSideMenuProps: Boolean
   },
 
   data() {
     return {
-      hiddenSideMenu: false
+      hiddenSideMenu: this.hiddenSideMenuProps
     };
   },
 
@@ -26,7 +26,15 @@ export default defineComponent({
     }
   },
 
+  watch:{
+    hiddenSideMenu(){
+      this.closeSideMenu();
+      this.hiddenSideMenu = !this.hiddenSideMenuProps
+    }
+  }, 
   mounted() {
+    this.hiddenSideMenu = true;
+    this.hiddenSideMenu = this.hiddenSideMenuProps
     if (!useAuthStore().user) {
       this.$router.push("");
     }

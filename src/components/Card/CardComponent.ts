@@ -23,7 +23,6 @@ export default defineComponent({
     },
 
     exercises(){
-      console.log(this.workoutId)
       useWorkoutStore().$state.workoutId = this.workoutId??'';
       this.$router.push({ name:"Exercises"});
     }
