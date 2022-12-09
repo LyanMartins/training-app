@@ -10,6 +10,7 @@ export default defineComponent({
 
   data() {
     return {
+      user: useAuthStore().getUser,
       hiddenSideMenu: this.hiddenSideMenuProps
     };
   },
@@ -33,6 +34,7 @@ export default defineComponent({
     }
   }, 
   mounted() {
+    console.log(this.user.name)
     this.hiddenSideMenu = true;
     this.hiddenSideMenu = this.hiddenSideMenuProps
     if (!useAuthStore().user) {

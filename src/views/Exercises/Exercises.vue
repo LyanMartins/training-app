@@ -7,17 +7,18 @@
       <span>Voltar</span>
     </div>
     <div class="box">
-      <ul v-for="exercise in exercises">
+      <ul v-for="(value, key) in exercises">
         <li>
+          
+          <hr v-if="(key !=0 )" class="mt-1">
           <div class="mt-2">
-            <h3>{{exercise.title}} </h3>
+            <h3>{{value.title}} </h3>
             <div class="mt-1 wrapper two-column">
-              <span><strong> Serie:</strong> {{exercise.serie}}</span>
-              <span><strong> Repetiçoes:</strong> {{exercise.repetition}}</span>
+              <span><strong> Serie:</strong> {{value.serie}}</span>
+              <span><strong> Repetiçoes:</strong> {{value.repetition}}</span>
             </div>
             <button class="btn btn-row mt-1">Detalhes</button>
           </div>
-          <hr class="mt-1">
         </li>
       </ul>
     </div>

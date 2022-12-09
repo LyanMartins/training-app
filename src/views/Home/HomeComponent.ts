@@ -5,6 +5,7 @@ import Card from "@/components/Card/Card.vue";
 import Skeleton from "@/components/Skeleton/Skeleton.vue";
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import { useWorkoutStore } from "@/stores/workoutStore";
+import { useRunningStore } from "@/stores/runningStore";
 
 export default defineComponent({
   components: {
@@ -26,7 +27,8 @@ export default defineComponent({
   data() {
     return {
       user: useAuthStore().getUser,
-      workouts: []
+      workouts: [],
+      running:{}
       
     };
   },
@@ -38,10 +40,26 @@ export default defineComponent({
   },
 
   methods: {
+    orderTraining() {
+
+      this.workouts.forEach((element,index) => {
+        if(element.id == this.running.workoutId){
+          this.workouts[index]['running'] = true;
+          return;
+        }
+
+        this.workouts[index]['running'] = false;
+
+      });
+      
+    }
   },
 
   async mounted() {
     await useWorkoutStore().listWorkout(useAuthStore().user.id);
+    await useRunningStore().getRunning(useAuthStore().user.id);
     this.workouts = useWorkoutStore().workout
+    this.running = useRunningStore().running
+    this.orderTraining()
   },
 });

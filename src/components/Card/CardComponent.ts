@@ -9,11 +9,15 @@ export default defineComponent({
   props: {
     title: String,
     breaktime: Number,
-    workoutId: String
+    workoutId: String,
+    running: Boolean
   },
 
   data() {
-    return  {}
+    return  {
+      timerPlay: false,
+      totalTimer: 0
+    }
   },
 
   methods: {
@@ -25,7 +29,35 @@ export default defineComponent({
     exercises(){
       useWorkoutStore().$state.workoutId = this.workoutId??'';
       this.$router.push({ name:"Exercises"});
+    },
+
+    workoutAction(){
+      if(this.running){
+        alert('finalizando')
+      }else{
+        alert('inicializando')
+      }
+    },
+
+    counterInitilizar()
+    {
+      this.timerPlay = true;
+      this.totalTimer = this.breaktime??30;
+      this.timeout()
+      
+    },
+
+    timeout() {
+      setTimeout(()=>{
+        this.totalTimer--;
+        if(this.totalTimer != 0){
+          this.timeout()
+        }else{
+          this.timerPlay = false
+        }
+      }, 1000)
     }
+
   },
 
   mounted() {
