@@ -23,7 +23,6 @@ const router = createRouter({
       name: "Exercises",
       component: Exercises,
       props: true,
-
     },
   ],
 });

@@ -24,6 +24,7 @@ export default defineComponent({
 
   methods: {
     async onSubmit() {
+      debugger;
       this.validateEmail(this.login.email);
 
       if (this.hasError) return;
@@ -41,7 +42,7 @@ export default defineComponent({
     },
 
     validateEmail(value: any) {
-      if (!/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+      if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
         return this.feedbackError(true, "Email inválido!");
       }
       return this.feedbackError(false);
